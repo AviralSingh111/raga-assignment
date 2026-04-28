@@ -1,5 +1,7 @@
 # MediCore — B2B Healthcare Intelligence Platform
 
+Deployed Link:- https://raga-assignment-2.netlify.app/
+
 A production-grade B2B Healthcare UI built with React, TypeScript, Redux Toolkit, Firebase Authentication, and Service Worker push notifications.
 
 ---
