@@ -1,0 +1,276 @@
+.page { display: flex; flex-direction: column; gap: 18px; }
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.viewToggle {
+  display: flex;
+  border: 1px solid var(--border2);
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.viewBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  background: var(--surface);
+  border: none;
+  font-size: 12.5px;
+  color: var(--text2);
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: var(--font);
+  font-weight: 400;
+}
+
+.viewBtn.active {
+  background: var(--accent);
+  color: white;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 7px 12px;
+  gap: 7px;
+  width: 220px;
+  transition: border-color 0.15s;
+}
+
+.searchBox:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+.searchBox input {
+  border: none;
+  background: none;
+  font-size: 12.5px;
+  color: var(--text);
+  outline: none;
+  width: 100%;
+}
+
+.searchBox input::placeholder { color: var(--text3); }
+
+.select {
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 12.5px;
+  color: var(--text2);
+  background: var(--surface);
+  cursor: pointer;
+  outline: none;
+  font-family: var(--font);
+}
+
+.count {
+  font-size: 12px;
+  color: var(--text3);
+  padding: 7px 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.addBtn {
+  margin-left: auto;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  font-family: var(--font);
+}
+
+.addBtn:hover { opacity: 0.9; }
+
+.gridView {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.patientCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.patientCard:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light), 0 4px 16px rgba(0,0,0,0.06);
+  transform: translateY(-2px);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  flex-shrink: 0;
+}
+
+.cardHeaderText { flex: 1; min-width: 0; }
+
+.patientName {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.patientId {
+  font-size: 10.5px;
+  color: var(--text3);
+  font-family: var(--mono);
+}
+
+.vitalsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.vitalItem {
+  background: var(--surface2);
+  border-radius: 7px;
+  padding: 7px 9px;
+}
+
+.vitalLabel {
+  font-size: 9.5px;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 2px;
+}
+
+.vitalVal {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.dept {
+  font-size: 11px;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.date { font-size: 11px; color: var(--text3); }
+
+.tableWrap {
+  background: var(--surface);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  overflow: auto;
+}
+
+.table { width: 100%; border-collapse: collapse; white-space: nowrap; }
+
+.table th {
+  background: var(--surface2);
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--text3);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+}
+
+.table td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 12.5px;
+  color: var(--text2);
+}
+
+.table tr:last-child td { border-bottom: none; }
+.table tbody tr:hover td { background: var(--surface2); }
+
+.listPatient { display: flex; align-items: center; gap: 8px; }
+
+.avatarSm {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 600;
+  color: white;
+  flex-shrink: 0;
+}
+
+.listName { font-size: 12.5px; font-weight: 500; color: var(--text); }
+.listId { font-size: 10.5px; color: var(--text3); font-family: var(--mono); }
+
+.mono { font-family: var(--mono); font-size: 12px; }
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 60px;
+  color: var(--text3);
+  font-size: 14px;
+}
+
+@media (max-width: 1200px) {
+  .gridView { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .gridView { grid-template-columns: 1fr; }
+  .searchBox { width: 160px; }
+}
